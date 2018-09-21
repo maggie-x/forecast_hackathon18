@@ -1,0 +1,28 @@
+
+#header {
+   height: 80px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   margin-bottom: 10px;
+   background-color: #FFD700;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+#header-text {
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+#calendar {
+  margin-left: 20px;
+  float: left;
+}
+
+#courses {
+  float: right;
+}
