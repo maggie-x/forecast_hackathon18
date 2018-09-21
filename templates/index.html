@@ -7,8 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Hello, world!</title>
+    <title>Forecast</title>
   </head>
   <body>
     <div class="row">
@@ -18,17 +20,46 @@
      </div>
     <div class="row">
     <div class="container-fluid">
-      <div class="col-sm 8" id="calendar">
-         <p>  Calendar </p>
+      <div class="col-sm-7" id="calendar">
+         <h2>  Calendar </h2>
+         <h4> 2019 </h4>
+           <table class="table table-hover">
+             <thead>
+               <tr>
+                 <th>T1</th>
+                 <th>T2</th>
+                 <th>T3</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>COMP1511</td>
+                 <td>COMP2521</td>
+                 <td></td>
+               </tr>
+               <tr>
+                 <td>MATH1081</td>
+                 <td>COMP1521</td>
+                 <td></td>
+               </tr>
+               <tr>
+                 <td>ENGG1000</td>
+                 <td>COMP1531</td>
+                 <td></td>
+               </tr>
+             </tbody>
+          </table>
+
       </div>
       <div class="col-sm-4 " id="courses">
-         <p>  Courses </p>
+         <h2>  Courses </h2>
+         <!-- FOR LOOP IN FLASK TO PRINT ALL COURSES -->
          <ul class="list-group">
-            <li class="list-group-item active">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item active">COMP1511</li>
+            <li class="list-group-item">MATH1131</li>
+            <li class="list-group-item">MATH1231</li>
+            <li class="list-group-item">COMP1531</li>
+            <li class="list-group-item">COMP1521</li>
           </ul>
       </div>
     </div>

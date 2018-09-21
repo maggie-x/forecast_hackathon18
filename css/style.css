@@ -20,9 +20,16 @@ h1 {
 
 #calendar {
   margin-left: 20px;
+  margin-right: 50px;
   float: left;
 }
 
-#courses {
-  float: right;
+.table {
+  width:inherit;
+  width: 100%;
 }
+
+#courses {
+  float: left;
+}
+
