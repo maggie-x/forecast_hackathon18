@@ -15,7 +15,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../main.js"></script>
     <title>Forecast</title>
+    <style>
 
+        #header {
+           height: 80px;
+           padding-top: 15px;
+           padding-bottom: 5px;
+           margin-bottom: 5px;
+           background-color: #FFD700;
+    
+        }
+    
+        .navbar {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+    
+        h1 {
+          text-align: center;
+        }
+    
+        #header-text {
+          text-align: center;
+          padding-top: 0px;
+          padding-bottom: 20px;
+        }
+    
+        #calendar {
+          margin-left: 20px;
+          margin-right: 50px;
+          float: left;
+        }
+    
+        .table {
+          width:inherit;
+          width: 100%;
+        }
+    
+        #courses {
+          float: left;
+        }
+    
+        .list-group-item a:hover {
+          background-color: grey;
+        }
+        </style>
   </head>
   <body>
     <div class="container-fluid" id="header">
@@ -24,15 +68,16 @@
     <div class="container-fluid">
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">UNSW Degree Planner </a>
+        <a class="navbar-brand">UNSW Degree Planner </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">Home</a>
-            <a class="nav-item nav-link" href="about.html">About</a>
-            <a class="nav-item nav-link active" href="courselist.html">Course List <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="{{url_for('calendar')}}">Calendar</a>
+              <a class="nav-item nav-link" href="{{url_for('course_list')}}">Course List</a>
+              <a class="nav-item nav-link" href="{{url_for('offerings')}}">Offerings</a>
           </div>
         </div>
       </nav>

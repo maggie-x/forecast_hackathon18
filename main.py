@@ -40,5 +40,8 @@ def offerings():
 @app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('home.html')
+@app.route('/course_list', methods=['GET', 'POST'])
+def course_list():
+    return render_template('courselist.html')
 if __name__ == '__main__':
 	app.run(debug=True, port=5001)
