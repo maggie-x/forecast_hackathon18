@@ -9,9 +9,54 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../css/style.css') }}">
 
     <!-- SCRIPTS -->
+    <style>
+
+    #header {
+       height: 80px;
+       padding-top: 15px;
+       padding-bottom: 5px;
+       margin-bottom: 5px;
+       background-color: #FFD700;
+
+    }
+
+    .navbar {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #header-text {
+      text-align: center;
+      padding-top: 0px;
+      padding-bottom: 20px;
+    }
+
+    #calendar {
+      margin-left: 20px;
+      margin-right: 50px;
+      float: left;
+    }
+
+    .table {
+      width:inherit;
+      width: 100%;
+    }
+
+    #courses {
+      float: left;
+    }
+
+    .list-group-item a:hover {
+      background-color: grey;
+    }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../main.js"></script>
     <title>Forecast</title>
@@ -74,12 +119,11 @@
       <div class="col-sm-4 " id="courses">
          <h2>  Courses </h2>
          <!-- FOR LOOP IN FLASK TO PRINT ALL COURSES -->
+
          <ul class="list-group">
-            <li class="list-group-item active">COMP1511</li>
-            <li class="list-group-item">MATH1131</li>
-            <li class="list-group-item">MATH1231</li>
-            <li class="list-group-item">COMP1531</li>
-            <li class="list-group-item">COMP1521</li>
+            {% for c in courses %}
+            <li class="list-group-item">{{c}}</li>
+            {% endfor %}
           </ul>
       </div>
     </div>
