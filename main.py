@@ -22,15 +22,19 @@ def testPrintCourses():
     t1 = []
     t2 = []
     t3 = []
-    for cObject in courseObjects;
+    for cObject in courseObjects:
         if cObject.availableTerms[0] == True:
             summer.append(cObject)
         if cObject.availableTerms[1] == True:
             t1.append(cObject)
+        if cObject.availableTerms[2] == True:
+            t2.append(cObject)
+        if cObject.availableTerms[3] == True:
+            t3.append(cObject)
 
     # list of courses per term
     # offering [[summer][t1][t2][t3]]
-    return render_template('index.html', courseObjects = courseObjects, offerings = offerings)
+    return render_template('index.html', courseObjects = courseObjects, summer=summer, t1=t1, t2=t2, t3=t3)
 
 
 if __name__ == '__main__':
