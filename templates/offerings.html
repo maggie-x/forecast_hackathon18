@@ -38,6 +38,10 @@
       padding-bottom: 20px;
     }
 
+    #offerings {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
 
     .table {
       width:inherit;
@@ -75,13 +79,62 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-4">
-        
+    <div class="row" id="offerings">
+      <div class="col-sm-3">
+        <h2> Summer </h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Summer</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in summer %}
+            <td> {{s.name}} </td>
+          </tbody>
+       </table>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
+        <h2> T1 </h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>T1</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in t1 %}
+            <td> {{c.name}} </td>
+          </tbody>
+       </table>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
+        <h2> T2 </h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>T2</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in t2 %}
+            <td> {{c.name}} </td>
+          </tbody>
+       </table>
+      </div>
+      <div class="col-sm-3">
+        <h2> T3 </h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>T3</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in t3 %}
+            <td> {{c.name}} </td>
+          </tbody>
+       </table>
       </div>
     </div>
   </body>
