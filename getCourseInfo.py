@@ -78,7 +78,7 @@ def parsePreReqs(course):
 def getCourseInfo(course):
     prereqs = parsePreReqs(course)
     offerings = getOfferings(course) # offerings = (True,False,False, False) tuple
-    curr = Course(course, prereqs_string, offerings)
+    curr = Course(course, prereqs, offerings)
     return curr
 
 '''
