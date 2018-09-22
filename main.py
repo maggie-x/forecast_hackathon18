@@ -27,16 +27,18 @@ for cObject in courseObjects:
         t2.append(cObject)
     if cObject.getOfferings()[3] == True:
         t3.append(cObject)
-@app.route('/', methods=['GET', 'POST'])
-def testPrintCourses():
+@app.route('/calendar', methods=['GET', 'POST'])
+def calendar():
 
 
     # list of courses per term
     # offering [[summer][t1][t2][t3]]
-    return render_template('index.html', courseObjects = courseObjects, summer=summer, t1=t1, t2=t2, t3=t3)
+    return render_template('calendar.html', courseObjects = courseObjects, summer=summer, t1=t1, t2=t2, t3=t3)
 @app.route('/offerings', methods=['GET', 'POST'])
 def offerings():
     return render_template('offerings.html',courseObjects = courseObjects, summer=summer, t1=t1, t2=t2, t3=t3 )
-
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
 if __name__ == '__main__':
 	app.run(debug=True, port=5001)
