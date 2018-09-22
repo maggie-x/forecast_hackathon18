@@ -32,12 +32,19 @@
        background-color: #FFD700;
 
     }
-
+    form {
+        text-align: center;
+    }
     .navbar {
       width: 100%;
       margin-bottom: 20px;
     }
-
+    .wrapper{
+        text-align: center;
+    }
+    .button {
+        position: absolute;
+    }
     h1 {
       text-align: center;
     }
@@ -95,10 +102,19 @@
   </div>
 <div class="parallax"></div>
 
-<div style="height:500px;background-color:#FFD700;;font-size:36px">
-Scroll Up and Down this page to see the parallax scrolling effect.
-This div is just here to enable scrolling.
-Tip: Try to remove the background-attachment property to remove the scrolling effect.
+<div style="height:500px;background-color:#FFD700;;font-size:36px align='center'">
+    <form method="POST" style="align-self:center ">
+        <br>
+        <br>
+        <br>
+            <h1 class="display-4">What's Your Degree?</h1><br>
+            <input type="text" name="Degree" value="">
+    </form> 
+    <div class="wrapper">
+        <a class="nav-item nav-link" href="{{url_for('calendar')}}">Submit</a>
+    
+    </div>
+    
 </div>
 
 </body>
