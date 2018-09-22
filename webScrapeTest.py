@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import csv
 import os.path
-def course(courseName):
+def courseFunc(courseName):
     page = "https://www.handbook.unsw.edu.au/undergraduate/courses/2019/"
     page = page+courseName
     return page
@@ -22,8 +22,7 @@ def check_course(text):
         return matched.group(0)
     else:
         return None
-
-def course_scraper(): # gets all comp courses
+def course_scraper():
     page = urlopen("https://www.handbook.unsw.edu.au/undergraduate/specialisations/2019/COMPA1")
     soup = BeautifulSoup(page, 'html.parser')
     data = []
@@ -36,12 +35,37 @@ def course_scraper(): # gets all comp courses
         data_string.append(remove_html_tags(element_string))
     for element in data_string:
         comp_courses.append(check_course(element))
-    for element in comp_courses:
-        if element != None:
-            if not os.path.exists(element+'.csv'):
-                with open(element+".csv","w") as f:
-                    f.write(something)
     return comp_courses
-
-
-
+def term_scraper():
+    page = urlopen("https://www.handbook.unsw.edu.au/undergraduate/courses/2019/COMP1511/")
+    soup = BeautifulSoup(page, 'html.parser')
+    data = []
+    data = soup.find_all("div", "o-attributes-table-item")
+    stringer =  remove_html_tags(str(data[3]))
+    print(stringer)
+    stringer = check_course2(stringer)
+    #returns a tuple of available terms
+def getOfferings(course):
+    courseUrl = courseFunc(course)
+    page = urlopen(courseUrl)
+    soup = BeautifulSoup(page, 'html.parser')
+    data = []
+    data = soup.find_all("div", "o-attributes-table-item")
+    stringer =  remove_html_tags(str(data[3]))
+    stringer = check_course2(stringer)
+    available = [False,False,False,False] #Order of Summer Term, Term 1, Term 2, Term 3
+    if(re.search('Summer Term',stringer)):
+        available[0] = True
+    if(re.search('Term 1',stringer)):
+        available[1] = True
+    if(re.search('Term 2',stringer)):
+        available[2] = True
+    if(re.search('Term 3',stringer)):
+        available[3] = True
+    return available
+def check_course2(text):
+    matched = re.match('Offering Terms(.*)',text)
+    if(matched):
+        return matched.group(1)
+    else:
+        return None
