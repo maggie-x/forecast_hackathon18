@@ -13,3 +13,6 @@ class Course:
 
     def setPreReqs(self, prereqs):
         self.prereqs = prereqs
+
+    def setChoice(self):
+        self.chosen = True
