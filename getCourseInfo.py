@@ -60,7 +60,7 @@ def check_course2(text):
 
 
 def parsePreReqs(course):
-    url = "https://www.handbook.unsw.edu.au/undergraduate/courses/2019/{}".format(course)
+    url = courseFunc(course)
     page = urlopen(url)
     soup = BeautifulSoup(page, 'html.parser')
     data = []
@@ -68,18 +68,19 @@ def parsePreReqs(course):
     # find prereqs
     # data = soup.find("readMoreSubjectConditions", "a-card-text m-toggle-text")
     data = soup.find_all("div", "a-card-text m-toggle-text has-focus")
-    # print(data[1]) # hard-coding, prereq always herE?
-    prereqs_string = remove_html_tags(str(data[1]))
+    prereqs_string = ""
+    if(len(data)>1):
+      prereqs_string = remove_html_tags(str(data[1]))
 
     # element_string = removePrereqText(element_string)
     # print(curr.availableTerms)
     return prereqs_string
 
 def getCourseInfo(course):
-    prereqs = parsePreReqs(course)
-    offerings = getOfferings(course) # offerings = (True,False,False, False) tuple
-    curr = Course(course, prereqs, offerings)
-    return curr
+  prereqs = parsePreReqs(course)
+  offerings = getOfferings(course) # offerings = (True,False,False, False) tuple
+  curr = Course(course, prereqs, offerings)
+  return curr
 
 '''
 <div class="a-card m-bottom-2" id="SubjectConditions">

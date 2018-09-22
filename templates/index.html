@@ -123,7 +123,7 @@
 
          <ul class="list-group">
             {% for c in courseObjects %}
-            <li class="list-group-item">{{c.name}} {{c.prereqs}}</li>
+            <li style="white-space: pre-line" class="list-group-item">{{c.name}}<span style="clear:both; color:grey;">{{c.prereqs}} </span></li>
             {% endfor %}
           </ul>
       </div>
