@@ -2,6 +2,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 import csv
+#return as a list of courses
 def remove_html_tags(text):
     """Remove html tags from a string"""
     
@@ -12,7 +13,12 @@ def remove_html_tags(text):
     #can also use re.search()
 def check_course(text):
     matched = re.match('([A-Z]{4}[0-9]{4})',text)
-    return matched.group(0)
+    if(matched):
+        return matched.group(0)
+    else:
+        return None
+
+
 page = urlopen("https://www.handbook.unsw.edu.au/undergraduate/specialisations/2019/COMPA1")
 soup = BeautifulSoup(page, 'html.parser')
 data = []
