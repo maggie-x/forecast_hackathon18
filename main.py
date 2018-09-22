@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 import json
 import sys
 import os
+import CourseClass
 
 app = Flask(__name__)
 Bootstrap(app)
