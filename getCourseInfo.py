@@ -81,11 +81,6 @@ def getCourseInfo(course):
     curr = Course(course, prereqs_string, offerings)
     return curr
 
-    # find available terms
-
-
-    # curr = Course()
-
 '''
 <div class="a-card m-bottom-2" id="SubjectConditions">
       <h3 tabindex="0" data-hbui="readmore__heading">

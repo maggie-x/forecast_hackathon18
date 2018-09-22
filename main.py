@@ -17,7 +17,16 @@ def testPrintCourses():
         courseObjects.append(getCourseInfo(course))
 
 
-    # courses = ["MATH1131", "MATH1231", "COMP1531", "COMP1521"] # should be list of course objects
+    # group via offerings
+    summer = []
+    t1 = []
+    t2 = []
+    t3 = []
+    for cObject in courseObjects;
+        if cObject.availableTerms[0] == True:
+            summer.append(cObject)
+        if cObject.availableTerms[1] == True:
+            t1.append(cObject)
 
     # list of courses per term
     # offering [[summer][t1][t2][t3]]
