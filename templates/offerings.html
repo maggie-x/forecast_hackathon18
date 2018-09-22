@@ -70,9 +70,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="{{url_for('testPrintCourses')}}">Home <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="#">About</a>
               <a class="nav-item nav-link" href="courselist.html">Course List</a>
+              <a class="nav-item nav-link" href="{{url_for('offerings')}}">Offerings</a>
             </div>
           </div>
         </nav>
@@ -84,13 +85,11 @@
         <h2> Summer </h2>
         <table class="table table-hover">
           <thead>
-            <tr>
-              <th>Summer</th>
-            </tr>
           </thead>
           <tbody>
             {% for s in summer %}
-            <td> {{s.name}} </td>
+            <li style="list-style-type: none"> {{s.name}} </li>
+            {% endfor %}
           </tbody>
        </table>
       </div>
@@ -98,13 +97,11 @@
         <h2> T1 </h2>
         <table class="table table-hover">
           <thead>
-            <tr>
-              <th>T1</th>
-            </tr>
           </thead>
           <tbody>
             {% for c in t1 %}
-            <td> {{c.name}} </td>
+            <li style="list-style-type: none"> {{c.name}} </li>
+            {% endfor %}
           </tbody>
        </table>
       </div>
@@ -112,13 +109,11 @@
         <h2> T2 </h2>
         <table class="table table-hover">
           <thead>
-            <tr>
-              <th>T2</th>
-            </tr>
           </thead>
           <tbody>
             {% for c in t2 %}
-            <td> {{c.name}} </td>
+            <li style="list-style-type: none"> {{c.name}} </li>
+            {% endfor %}
           </tbody>
        </table>
       </div>
@@ -126,13 +121,11 @@
         <h2> T3 </h2>
         <table class="table table-hover">
           <thead>
-            <tr>
-              <th>T3</th>
-            </tr>
           </thead>
           <tbody>
             {% for c in t3 %}
-            <td> {{c.name}} </td>
+            <li style="list-style-type: none"> {{c.name}} </li>
+            {% endfor %}
           </tbody>
        </table>
       </div>
