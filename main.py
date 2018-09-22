@@ -1,9 +1,11 @@
 from flask import Flask, app, render_template, url_for, redirect, session, request
+from flask_bootstrap import Bootstrap
 import json
 import sys
 import os
 
 app = Flask(__name__)
+Bootstrap(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def testPrintCourses():
