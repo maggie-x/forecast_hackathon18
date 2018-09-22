@@ -5,7 +5,7 @@ import csv
 #return as a list of courses
 def remove_html_tags(text):
     """Remove html tags from a string"""
-
+    
     clean = re.compile('<.*?>')
     clean = re.sub(clean, '', text)
     clean = clean.replace("\n", '')
@@ -28,6 +28,6 @@ data_string = []
 for data_element in data:
     element_string = str(data_element)
     data_string.append(remove_html_tags(element_string))
-    for element in data_string:
+for element in data_string:
     print(check_course(element))
 
