@@ -1,8 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
-import csv
-import os.path
 def courseFunc(courseName):
     page = "https://www.handbook.unsw.edu.au/undergraduate/courses/2019/"
     page = page+courseName
