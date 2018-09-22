@@ -10,7 +10,7 @@ def course(courseName):
 #return as a list of courses
 def remove_html_tags(text):
     """Remove html tags from a string"""
-    
+
     clean = re.compile('<.*?>')
     clean = re.sub(clean, '', text)
     clean = clean.replace("\n", '')
@@ -23,7 +23,7 @@ def check_course(text):
     else:
         return None
 
-def course_scraper():
+def course_scraper(): # gets all comp courses
     page = urlopen("https://www.handbook.unsw.edu.au/undergraduate/specialisations/2019/COMPA1")
     soup = BeautifulSoup(page, 'html.parser')
     data = []
@@ -41,4 +41,7 @@ def course_scraper():
             if not os.path.exists(element+'.csv'):
                 with open(element+".csv","w") as f:
                     f.write(something)
-course_scraper()
+    return comp_courses
+
+
+

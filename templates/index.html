@@ -121,8 +121,8 @@
          <!-- FOR LOOP IN FLASK TO PRINT ALL COURSES -->
 
          <ul class="list-group">
-            {% for c in courses %}
-            <li class="list-group-item">{{c}}</li>
+            {% for c in courseObjects %}
+            <li class="list-group-item">{{c.name}} {{c.prereqs}}</li>
             {% endfor %}
           </ul>
       </div>
