@@ -22,7 +22,7 @@ def testPrintCourses():
     t1 = []
     t2 = []
     t3 = []
-    for cObject in courseObjects;
+    for cObject in courseObjects:
         if cObject.availableTerms[0] == True:
             summer.append(cObject)
         if cObject.availableTerms[1] == True:
