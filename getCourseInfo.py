@@ -1,7 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
-import csv
 from Course import *
 
 def remove_html_tags(text):
@@ -21,6 +20,41 @@ def removePrereqText(text):
 
 # courses = ["COMP3121", "COMP2521", "COMP2511"]
 # parsedCourses = []
+def courseFunc(courseName):
+    page = "https://www.handbook.unsw.edu.au/undergraduate/courses/2019/"
+    page = page+courseName
+    return page
+    #can also use re.search()
+def check_course(text):
+    matched = re.match('([A-Z]{4}[0-9]{4})',text)
+    if(matched):
+        return matched.group(0)
+    else:
+        return None
+def getOfferings(course):
+    courseUrl = courseFunc(course)
+    page = urlopen(courseUrl)
+    soup = BeautifulSoup(page, 'html.parser')
+    data = []
+    data = soup.find_all("div", "o-attributes-table-item")
+    stringer =  remove_html_tags(str(data[3]))
+    stringer = check_course2(stringer)
+    available = [False,False,False,False] #Order of Summer Term, Term 1, Term 2, Term 3
+    if(re.search('Summer Term',stringer)):
+        available[0] = True
+    if(re.search('Term 1',stringer)):
+        available[1] = True
+    if(re.search('Term 2',stringer)):
+        available[2] = True
+    if(re.search('Term 3',stringer)):
+        available[3] = True
+    return available
+def check_course2(text):
+    matched = re.match('Offering Terms(.*)',text)
+    if(matched):
+        return matched.group(1)
+    else:
+        return None
 
 
 
